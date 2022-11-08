@@ -1,9 +1,16 @@
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Challenge1 {
     public static void main(String[] args) {
         CodeGenerator();
+
+        List<String> list = Arrays.asList("Mango", "Lulo", "Pera"); 
+		String word = "mora";	
+		
+		System.out.println(isInIt(list, word));
     }
 
 
@@ -46,6 +53,15 @@ public class Challenge1 {
             }
     
     }
+
+    public static boolean isInIt(List<String> list,String word) {
+	    for(String words: list){
+	        if (words.equalsIgnoreCase(word)) {
+	        	return false;
+	        }
+	    }
+	    return true; 
+	}
 }
 
 
