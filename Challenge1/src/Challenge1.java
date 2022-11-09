@@ -5,7 +5,13 @@ import java.util.Scanner;
 
 public class Challenge1 {
     public static void main(String[] args) {
-        CodeGenerator();
+
+        String codeType;
+        Scanner readType = new Scanner(System.in);
+    
+        System.out.print("Please type in your code type (a or b): ");
+        codeType = readType.nextLine();
+        CodeGenerator(codeType);
 
         List<String> list = Arrays.asList("Mango", "Lulo", "Pera"); 
 		String word = "mora";	
@@ -14,14 +20,8 @@ public class Challenge1 {
     }
 
 
-    public static void CodeGenerator(){
-
-        String codeType;
-        Scanner readType = new Scanner(System.in);
-    
-        System.out.print("Please type in your code type (a or b): ");
-        codeType = readType.nextLine();
-             
+    public static String CodeGenerator(String codeType){
+      
         String code;
     
         if (codeType.equalsIgnoreCase("A")){
@@ -47,10 +47,10 @@ public class Challenge1 {
                System.out.println(code);
     
             } else {
-    
                 System.out.println("Your type code is invalid.");
-    
+                code = null;
             }
+        return code;
     
     }
 
